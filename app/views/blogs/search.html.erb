@@ -31,7 +31,7 @@
   </thead>
 
   <tbody>
-    <% @blogs.each do |blog| %>
+    <% @results.each do |blog| %>
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.content %></td>
@@ -42,10 +42,6 @@
     <% end %>
   </tbody>
 </table>
-<%= t "activerecord.attributes.user.confirmation_sent_at" %>
-<%= t "attributes.user.confirmation_sent_at" ,scope: :activerecord %>
-<%= t :confirmation_sent_at ,scope: "activerecord.attributes.user" %>
-<%= t :confirmation_sent_at ,scope: [:activerecord, :attributes, :user] %>
 
 <br>
 

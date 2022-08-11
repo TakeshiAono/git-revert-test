@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   before_action :set_blog, only: %i[ show edit update destroy ]
+  before_action :set_q, only: [:index, :search]
 
   # GET /blogs or /blogs.json
   def index
@@ -58,7 +59,15 @@ class BlogsController < ApplicationController
     end
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
+    def set_q
+      @q = Blog.ransack(params[:q])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.find(params[:id])

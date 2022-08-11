@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      user:
+      blog: ほいほい
+    attributes:
+      blog:
+        title: タイトル

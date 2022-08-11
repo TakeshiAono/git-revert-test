@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      user:
+      title:
+      blog: ブログa
+    attributes:
+      blog:
+        content: 内容
